@@ -1,0 +1,25 @@
+<div class="leftbar" id="leftbar">
+            <div class="px-1 mt-2 d-lg-none">
+                <button
+                    class="remove-class-btn light btn-custom"
+                    onclick="removeClass('leftbar')"
+                >
+                    <i class="fal fa-chevron-left"></i> @lang('Back')
+                </button>
+            </div>
+            <div class="top p-1 d-flex">
+                <button @click="liveUpComing('live')" type="button" :class="{light: (showType == 'upcoming')}"  class="btn-custom me-1">
+                    <i class="las la-podcast"></i>
+                    @lang('Live')
+                </button>
+                <button @click="liveUpComing('upcoming')" type="button" :class="{light: (showType == 'live')}"  class="btn-custom ">
+                    <i class="las la-meteor"></i>
+                    @lang('Upcoming')
+                </button>
+            </div>
+            @include($theme.'partials.home.leftMenu')
+
+            <div class="bottom p-1">
+                <a href="{{route('betResult')}}" class="btn-custom light w-100">@lang('results')</a>
+            </div>
+        </div>
